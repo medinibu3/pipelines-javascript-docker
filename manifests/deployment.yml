@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: javascriptdockerapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javascriptdockerapp
+  template:
+    metadata:
+      labels:
+        app: javascriptdockerapp 
+    spec:
+      containers:
+        - name: javascriptdockerapp 
+          image: medymycontainerregistry.azurecr.io/javascriptdockerapp
+          ports:
+          - containerPort: 8080
